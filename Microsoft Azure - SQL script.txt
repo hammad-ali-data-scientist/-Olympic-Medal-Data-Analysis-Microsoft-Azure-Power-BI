@@ -1,0 +1,31 @@
+SELECT 
+    Country, 
+    medal_type, 
+    gender,
+    COUNT(*) AS TotalRecords,
+    SUM(COUNT(*)) OVER (PARTITION BY Country) AS TotalMedals
+FROM 
+    OPENROWSET(
+        BULK 'https://hammad.dfs.core.windows.net/project2/find medals/medallists.csv',
+        FORMAT = 'CSV',
+        PARSER_VERSION = '2.0'
+    )
+    WITH (
+        medal_date VARCHAR(50),
+        medal_type VARCHAR(50),
+        medal_code VARCHAR(50),
+        name VARCHAR(255),
+        gender VARCHAR(50),
+        country VARCHAR(50),
+        country_code VARCHAR(50),
+        nationality VARCHAR(50),
+        team VARCHAR(255)
+    ) AS [result]
+GROUP BY 
+    Country, 
+    medal_type, 
+    gender
+ORDER BY 
+    Country, 
+    medal_type, 
+    gender;
