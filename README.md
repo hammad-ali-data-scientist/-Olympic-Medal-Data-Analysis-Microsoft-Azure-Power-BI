@@ -37,6 +37,8 @@ olympic-medal-analytics/
 
 ## 📈  Query (Azure SQL)
 
+
+```sql
 SELECT 
     Country, 
     medal_type, 
@@ -69,8 +71,7 @@ ORDER BY
     medal_type, 
     gender;
 
-
-##📊 Power BI Dashboard Preview
+## 📊 Power BI Dashboard Preview
 
 Dashboard contains:
 Country-wise medal totals
@@ -78,13 +79,13 @@ Gender distribution
 Medal type breakdown (Gold, Silver, Bronze)
 Interactive slicers for exploration
 
-##🧾 How to Use This Project
+## 🧾 How to Use This Project
 
 Clone or download the repository
 Run sql/azure_medal_query.sql in Azure Synapse Studio
 Open the .pbix file in Power BI Desktop
 Customize visuals or filters as needed
 
-##📌 Author
+## 📌 Author
 👨‍💻 Hammad Ali
 Data Analyst | Azure & Power BI Enthusiast
