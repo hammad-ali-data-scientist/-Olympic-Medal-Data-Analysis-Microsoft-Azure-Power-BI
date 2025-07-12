@@ -70,6 +70,7 @@ ORDER BY
     Country, 
     medal_type, 
     gender;
+```
 
 ## 📊 Power BI Dashboard Preview
 
